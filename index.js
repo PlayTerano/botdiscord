@@ -41,18 +41,18 @@ client.on('ready', () => {
         .setAuthor(message.guild.name, message.guild.iconURL)
         .setTitle(`🔍 Informações do servidor: **${name}**`)
         .setThumbnail(icon)
-        .addField("Total | Humans | Bots",
+        .addField(":busts_in_silhouette:Total|:person_bald:Humanos|:robot:Bots",
           `${message.guild.members.cache.size} | ${message.guild.members.cache.filter(member =>
           !member.user.bot).size} | ${message.guild.members.cache.filter(member =>
           member.user.bot).size}`, true)
-        .addField("Name", message.guild.name, true)
-        .addField("ID", message.guild.id, true)
-        .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
-        .addField("Region", Region[message.guild.region], true)
-        .addField("Channels", message.guild.channels.cache.size, true)
-        .addField("Roles", message.guild.roles.cache.size, true)
-        .addField("Create Date",formatDate('DD/MM/YYYY, às HH:mm:ss', date))
-        .addField("Joined Date",formatDate('DD/MM/YYYY, às HH:mm:ss', joined))
+        .addField("Nome", message.guild.name, true)
+        .addField(":computer:ID", message.guild.id, true)
+        .addField(":sunglasses:Dono", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+        .addField(":map:Região", Region[message.guild.region], true)
+        .addField(":speech_balloon:Canais", message.guild.channels.cache.size, true)
+        .addField(":crown:Cargos", message.guild.roles.cache.size, true)
+        .addField("Criado em:",moment().format('LLLL', date))
+        .addField("Entrou em:",moment().format('LLLL', joined))
         
 
         function formatDate (template, date) {
